@@ -1,0 +1,24 @@
+{
+  "name": "03-bases_node",
+  "version": "0.0.1",
+  "description": "Simple tabla de multiplicar con archivo de texto",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "base3": "node app --base=3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngelTravieso/bases_node.git"
+  },
+  "author": "Angel Travieso",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AngelTravieso/bases_node/issues"
+  },
+  "homepage": "https://github.com/AngelTravieso/bases_node#readme",
+  "dependencies": {
+    "colors": "^1.4.0"
+  },
+  "devDependencies": {}
+}
