@@ -1,3 +1,8 @@
+// Módulo de commonJS
+const fs = require('fs');
+
+// ES module (forma nueva)
+// import { fs } from 'fs';
 
 // Limpiar consola
 console.clear();
@@ -6,10 +11,20 @@ console.log('         Tabla del 5           ');
 console.log('===============================');
 
 // Imprimir tabla del 5 por consola
-const base = 5;
+const base = 3;
+let salida = '';
+
 for(let i = 1; i <= 10; i++) {
-    console.log(`${base} x ${i} = ${base * i}`);
+    salida += `${base} x ${i} = ${base * i} \n`;
 }
+
+console.log(salida);
+
+fs.writeFile( `tabla-${base}.txt`, salida, (err) => {
+    if (err) throw err;
+
+    console.log(`tabla-${base}.txt creado`);
+});
 
 // Todas las tablas de multiplicar
 // for(let i = 1; i <= 10; i++) {
