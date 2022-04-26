@@ -8,12 +8,21 @@ const argv = require('yargs')
             .option('b', {
                 alias: 'base',
                 type: 'number',
-                demandOption: true
+                demandOption: true,
+                describe: 'Base de la tabla de multiplicar'
             })
             .option('l', {
                 alias: 'listar',
                 type: 'boolean',
                 default: false,
+                describe: 'Listar resultado'
+            })
+            .option('h', {
+                alias: 'hasta',
+                type: 'number',
+                default: 10,
+                demandOption: false,
+                describe: 'Multiplicación hasta número indicado'
             })
             .check( ( argv, option ) =>{
                 if( isNaN( argv.b ) ) {
@@ -28,7 +37,6 @@ const argv = require('yargs')
 // listar
 // boolean
 // default: false
-
 
 
 // Limpiar consola
@@ -47,7 +55,7 @@ console.clear();
 
 // const base = 5;
 
-crearArchivo( argv.b, argv.l )
+crearArchivo( argv )
     .then( nombreArchivo => console.log(nombreArchivo.green.bold, 'creado \n'.green.bold) )
     .catch( err => console.log(err ) )
 
