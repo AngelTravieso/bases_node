@@ -3,6 +3,8 @@ const fs = require('fs');
 // ES module (forma nueva)
 // import { fs } from 'fs';
 
+const colors = require('colors');
+
 const crearArchivo = async( base = 5, listar = false ) => {
     
     try {
@@ -10,13 +12,13 @@ const crearArchivo = async( base = 5, listar = false ) => {
         let salida = '';
 
         for(let i = 1; i <= 10; i++) {
-            salida += `${ base } x ${ i } = ${ base * i } \n`;
+            salida += `${base} ${colors.green('x')} ${i} ${colors.green('=')} ${ base * i } \n`;
         }
 
         if( listar ) {
-            console.log('===============================');
-            console.log(`     Tabla del ${ base }     `);
-            console.log('===============================');
+            console.log(colors.yellow('==============================='));
+            console.log(colors.green(`|        Tabla del ${ colors.blue(base)}          |`.bold));
+            console.log(colors.yellow('==============================='));
             console.log(salida);
         }
 

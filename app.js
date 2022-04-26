@@ -1,5 +1,6 @@
 // Importar modulo
 const { option } = require('yargs');
+const colors = require('colors');
 const { crearArchivo } = require('./helpers/multiplicar');
 
 // yargs
@@ -35,7 +36,7 @@ console.clear();
 
 // Capturar parametros recibidos por consola (node)
 // console.log(process.argv);
-console.log(argv);
+// console.log(argv);
 
 // Capturar parametros recibidos por consola (yargs)
 // console.log('base: yargs', argv.b );
@@ -47,7 +48,7 @@ console.log(argv);
 // const base = 5;
 
 crearArchivo( argv.b, argv.l )
-    .then( nombreArchivo => console.log(nombreArchivo, 'creado') )
+    .then( nombreArchivo => console.log(nombreArchivo.green.bold, 'creado \n'.green.bold) )
     .catch( err => console.log(err ) )
 
 
